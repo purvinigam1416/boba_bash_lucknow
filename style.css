@@ -1,369 +1,142 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff5df;
-    color: #17110d;
+    font-family: Arial, sans-serif;
+    background-color: #fffaf0;
+    color: #21170f;
 }
 
-/* Navigation */
-
-.navbar {
-    background: #17110d;
-    color: white;
-    padding: 22px 7%;
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 22px 7%;
+    background-color: #21170f;
+    color: white;
 }
 
-.logo {
-    color: #ffcf24;
-    font-size: 26px;
+header h2 {
+    color: #ffbd24;
 }
 
-.navbar p {
-    font-size: 11px;
-    letter-spacing: 3px;
+header p {
+    font-size: 12px;
+    letter-spacing: 2px;
 }
-
-/* Main section */
 
 .hero {
-    min-height: 680px;
-    padding: 70px 10%;
     display: flex;
     align-items: center;
-    position: relative;
-    overflow: hidden;
-    color: white;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(20, 12, 6, 0.88),
-            rgba(20, 12, 6, 0.45)
-        ),
-        url("kurkure.jpg") center / cover no-repeat;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 60px 7%;
+    background-color: #f8e7c0;
 }
 
-.content {
-    max-width: 620px;
-    position: relative;
-    z-index: 2;
+.text {
+    flex: 1;
 }
 
 .tag {
-    color: #ffcf24;
-    font-size: 12px;
+    color: #a53a19;
+    font-size: 13px;
     font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
+    letter-spacing: 2px;
 }
 
 h1 {
-    font-size: clamp(55px, 8vw, 100px);
-    line-height: 1;
-    margin-bottom: 25px;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 h1 span {
-    display: block;
-    color: #ffcf24;
-}
-
-h1 strong {
-    display: block;
-    color: transparent;
-    -webkit-text-stroke: 2px white;
+    color: #e99500;
 }
 
 .description {
-    max-width: 420px;
-    font-size: 15px;
-    line-height: 1.8;
-    color: #f3e8d9;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 430px;
 }
 
 .button {
     display: inline-block;
-    margin-top: 28px;
-    padding: 17px 22px;
-    background: #ffcf24;
-    color: #17110d;
+    padding: 14px 22px;
+    background-color: #ffbd24;
+    color: #21170f;
     text-decoration: none;
-    font-size: 12px;
     font-weight: bold;
-    transition: 0.3s;
+    border: 1px solid #21170f;
 }
 
-.button:hover {
-    background: #ff5a1f;
-    color: white;
-    transform: translateY(-3px);
-}
-
-.small-text {
-    margin-top: 40px;
-    padding-top: 18px;
-    border-top: 1px solid #b9a58c;
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-/* Yellow badge */
-
-.badge {
-    position: absolute;
-    right: 10%;
-    bottom: 12%;
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    background: #ffcf24;
-    color: #17110d;
-    border: 3px solid #17110d;
-    box-shadow: 5px 5px 0 #17110d;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+.image {
+    flex: 1;
     text-align: center;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 1.5;
-
-    animation: float 3s ease-in-out infinite;
 }
 
-.badge span {
-    font-size: 28px;
-}
-
-/* Moving message strip */
-
-.ticker {
-    background: #ffcf24;
-    padding: 18px 10px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    border-top: 2px solid #17110d;
-    border-bottom: 2px solid #17110d;
-}
-
-/* About section */
-
-.about {
-    padding: 90px 10%;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    gap: 50px;
-}
-
-.about h2 {
-    font-size: clamp(40px, 6vw, 70px);
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
-
-.about h2 span {
-    color: #ff5a1f;
-}
-
-.about-text {
-    max-width: 520px;
-    color: #665747;
-    font-size: 15px;
-    line-height: 1.9;
-}
-
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 25px;
-}
-
-.features span {
-    padding: 10px 12px;
-    border: 1px solid #c9b89c;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.features span:hover {
-    background: #ffcf24;
-}
-
-/* Decorative artwork */
-
-.art {
-    min-height: 300px;
-    aspect-ratio: 1 / 1;
-    max-width: 340px;
+.image img {
     width: 100%;
-    border-radius: 50%;
-    border: 3px solid #17110d;
-    background: #ffcf24;
-    box-shadow: 10px 10px 0 #ff5a1f;
+    max-width: 480px;
+    height: auto;
+    border: 3px solid #21170f;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+#about {
+    padding: 65px 7%;
     text-align: center;
-    transform: rotate(-5deg);
+    background-color: white;
 }
 
-.art h3 {
-    font-size: clamp(35px, 5vw, 58px);
-    color: #ff5a1f;
-    text-shadow: 2px 2px #17110d;
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
-.art span {
-    font-size: 35px;
-    margin: 8px;
+#about p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
 }
-
-.art p {
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 4px;
-}
-
-/* Footer */
 
 footer {
-    background: #17110d;
+    padding: 22px;
+    text-align: center;
+    background-color: #21170f;
     color: white;
-    padding: 35px 7%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-}
-
-footer h2 {
-    color: #ffcf24;
-    font-size: 24px;
-}
-
-footer p {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 2px;
 }
 
-/* Simple animation */
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(5deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(-5deg);
-    }
-}
-
-/* Mobile design */
-
 @media (max-width: 768px) {
-    .navbar {
-        padding: 20px;
+    header {
+        padding: 18px 5%;
     }
 
-    .logo {
-        font-size: 20px;
-    }
-
-    .navbar p {
-        font-size: 8px;
-        letter-spacing: 1px;
+    header p {
+        font-size: 10px;
     }
 
     .hero {
-        min-height: 720px;
-        padding: 60px 25px;
-        background-position: 40% center;
+        flex-direction: column;
+        padding: 35px 6%;
     }
 
     h1 {
-        font-size: clamp(52px, 12vw, 75px);
+        font-size: 36px;
     }
 
-    .description {
-        font-size: 14px;
+    .image {
+        width: 100%;
     }
 
-    .badge {
-        width: 90px;
-        height: 90px;
-        right: 22px;
-        bottom: 20px;
-        font-size: 8px;
-    }
-
-    .badge span {
-        font-size: 20px;
-    }
-
-    .ticker {
-        font-size: 10px;
-        line-height: 1.8;
-    }
-
-    .about {
-        grid-template-columns: 1fr;
-        padding: 65px 25px;
-        gap: 45px;
-    }
-
-    .about h2 {
-        font-size: 48px;
-    }
-
-    .art {
-        width: 80%;
-        min-height: 0;
-        justify-self: center;
-    }
-
-    footer {
-        padding: 30px 22px;
-    }
-
-    footer h2 {
-        font-size: 20px;
-    }
-
-    footer p {
-        line-height: 1.8;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .badge {
-        animation: none;
-    }
-
-    html {
-        scroll-behavior: auto;
+    #about h2 {
+        font-size: 25px;
     }
 }
